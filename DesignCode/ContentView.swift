@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var show = false
     @State var cardViewState = CGSize.zero
     @State var showCard = false
+    @State var bottomCardState = CGSize.zero
+    @State var isFull = false
     
     var body: some View {
         ZStack {
@@ -29,7 +31,7 @@ struct ContentView: View {
                 .offset(x: 0, y: show ? -400 : -40)
                 .offset(cardViewState)
                 .offset(y: showCard ? -180 : 0)
-                .scaleEffect(0.9)
+                .scaleEffect(showCard ? 1 : 0.9)
                 .rotationEffect(.degrees(show ? 0 : 10))
                 .rotationEffect(.degrees(showCard ? -10 : 0))
                 .rotation3DEffect(.degrees(showCard ? 0 : 10), axis: (x: 10, y: 0, z: 0))
@@ -44,7 +46,7 @@ struct ContentView: View {
                 .offset(x: 0, y: show ? -200 : -20)
                 .offset(cardViewState)
                 .offset(y: showCard ? -140 : 0)
-                .scaleEffect(0.95)
+                .scaleEffect(showCard ? 1 : 0.95)
                 .rotationEffect(.degrees(show ? 0 : 5))
                 .rotationEffect(.degrees(showCard ? -5 : 0))
                 .rotation3DEffect(.degrees(showCard ? 0 : 5), axis: (x: 10, y: 0, z: 0))
@@ -75,8 +77,33 @@ struct ContentView: View {
             
             BottomCardView()
                 .offset(x: 0, y: showCard ? 360 : 1000)
+                .offset(y: bottomCardState.height)
                 .blur(radius: show ? 20 : 0)
                 .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .gesture(
+                    DragGesture().onChanged {
+                        self.bottomCardState = $0.translation
+                        if self.isFull {
+                            self.bottomCardState.height += -300
+                        }
+                        if self.bottomCardState.height < -300 {
+                            self.bottomCardState.height = -300
+                        }
+                    }
+                    .onEnded { _ in
+                        if self.bottomCardState.height > 50 {
+                            self.showCard = false
+                        }
+                        if (self.bottomCardState.height < -100 && !self.isFull)
+                            || (self.bottomCardState.height < -250 && self.isFull){
+                            self.bottomCardState.height = -300
+                            self.isFull = true
+                        } else {
+                            self.bottomCardState = .zero
+                            self.isFull = false
+                        }
+                    }
+                )
         
         }
     }
