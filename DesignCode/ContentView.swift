@@ -11,6 +11,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         ZStack {
+            TitleView()
+            
             BackgroundCardView()
                 .background(Color("card3"))
                 .cornerRadius(20)
@@ -78,5 +80,21 @@ struct BackgroundCardView: View {
             Spacer()
         }
         .frame(width: 340, height: 220)
+    }
+}
+
+struct TitleView: View {
+    var body: some View {
+        VStack {
+            HStack {
+                Text("Certificates🧠🧖‍♀️")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                Spacer()
+            }
+            .padding()
+            Image("Background1")
+            Spacer()
+        }
     }
 }
