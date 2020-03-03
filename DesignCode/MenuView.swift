@@ -19,6 +19,7 @@ struct MenuView: View {
                 Color.white
                     .frame(width: 52, height: 6)
                     .cornerRadius(3)
+                    .shadow(radius: 8)
                     .frame(width: 130, height: 6, alignment: .leading)
                     .background(Color.black.opacity(0.08))
                     .cornerRadius(3)
