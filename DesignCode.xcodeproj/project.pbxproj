@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5021F3F3240DF601006273D8 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021F3F2240DF601006273D8 /* MenuView.swift */; };
 		5021F3F5240E0926006273D8 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5021F3F4240E0926006273D8 /* HomePage.swift */; };
+		50562D31240E301C00CB9FB5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50562D30240E301C00CB9FB5 /* HomeView.swift */; };
 		50FE4E5B240D3CFD0059095E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4E5A240D3CFD0059095E /* CardView.swift */; };
 		50FE4E5D240D3D2A0059095E /* BottomCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4E5C240D3D2A0059095E /* BottomCardView.swift */; };
 		C24E13EB240CB46B00922850 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E13EA240CB46B00922850 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		5021F3F2240DF601006273D8 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5021F3F4240E0926006273D8 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		50562D30240E301C00CB9FB5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		50FE4E5A240D3CFD0059095E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		50FE4E5C240D3D2A0059095E /* BottomCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomCardView.swift; sourceTree = "<group>"; };
 		C24E13E7240CB46B00922850 /* DesignCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +77,7 @@
 				50FE4E5C240D3D2A0059095E /* BottomCardView.swift */,
 				5021F3F2240DF601006273D8 /* MenuView.swift */,
 				5021F3F4240E0926006273D8 /* HomePage.swift */,
+				50562D30240E301C00CB9FB5 /* HomeView.swift */,
 			);
 			path = DesignCode;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 				50FE4E5D240D3D2A0059095E /* BottomCardView.swift in Sources */,
 				C24E13ED240CB46B00922850 /* SceneDelegate.swift in Sources */,
 				50FE4E5B240D3CFD0059095E /* CardView.swift in Sources */,
+				50562D31240E301C00CB9FB5 /* HomeView.swift in Sources */,
 				C24E13EF240CB46B00922850 /* ContentView.swift in Sources */,
 				5021F3F5240E0926006273D8 /* HomePage.swift in Sources */,
 			);
