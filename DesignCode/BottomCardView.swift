@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct BottomCardView: View {
+    @Binding var show: Bool
+    
     var body: some View {
         VStack(spacing: 20) {
             Rectangle()
@@ -19,6 +21,24 @@ struct BottomCardView: View {
                 .multilineTextAlignment(.center)
                 .font(.subheadline)
                 .lineSpacing(4)
+            
+            HStack(spacing: 20) {
+                RingView(size: CGSize(width: 88, height: 88), percent: 75, show: $show)
+                    .animation(Animation.easeInOut.delay(0.3))
+                
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("SwiftUI").fontWeight(.bold)
+                    Text("9 of 12 sections completed\n10 hours spent so far")
+                        .font(.footnote)
+                        .foregroundColor(.gray)
+                        .lineSpacing(4)
+                }
+                .padding(20)
+                .background(Color.white)
+                .cornerRadius(20)
+                .shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 10)
+            }
+            
             Spacer()
         }
         .padding(.top, 8)
@@ -32,6 +52,6 @@ struct BottomCardView: View {
 
 struct BottomCardView_Previews: PreviewProvider {
     static var previews: some View {
-        BottomCardView()
+        BottomCardView(show: .constant(true))
     }
 }

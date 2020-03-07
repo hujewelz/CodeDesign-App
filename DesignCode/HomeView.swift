@@ -16,7 +16,8 @@ struct HomeView: View {
         VStack {
             HStack {
                 Text("Watching")
-                    .font(.system(size: 28, weight: .bold))
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
                 Spacer()
                 Button(action: {
                     self.showProfile.toggle()
